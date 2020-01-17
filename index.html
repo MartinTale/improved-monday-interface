@@ -42,7 +42,7 @@
 
             <div style="margin: 1rem 0;" class="field has-addons" v-show="showSettings">
                 <div class="control">
-                    <input id="mondayDomain" class="input" style="min-width: 350px;" type="text" placeholder="https://your-domain-in.monday.com/" :value="settings.mondayDomain">
+                    <input id="mondayDomain" class="input" style="min-width: 350px;" type="text" placeholder="https://your-domain-in.monday.com" :value="settings.mondayDomain">
                 </div>
                 <div class="control is-expanded">
                     <input id="mondayApiKey" class="input" type="text" placeholder="monday.com V2 API Key.." :value="settings.apiKey">
@@ -328,8 +328,8 @@
                                     if (column_value.title == "Severity") {
                                         taskSeverity = column_value.text;
                                     }
-
-                                    if (column_value.text == settings.name) {
+									
+                                    if (column_value.text == settings.name || (column_value.text !== null && column_value.text.toLowerCase().indexOf(settings.name.toLowerCase()) !== -1)) {
                                         assignedToMe = true;
                                     }
                                 });
