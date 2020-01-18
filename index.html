@@ -329,7 +329,7 @@
                                         taskSeverity = column_value.text;
                                     }
 									
-                                    if (column_value.text == settings.name || (column_value.text !== null && column_value.text.toLowerCase().indexOf(settings.name.toLowerCase()) !== -1)) {
+                                    if (column_value.text == settings.name || (column_value.text != null && column_value.text.toLowerCase().indexOf(settings.name.toLowerCase()) !== -1)) {
                                         assignedToMe = true;
                                     }
                                 });
